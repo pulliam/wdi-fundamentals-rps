@@ -51,6 +51,8 @@ function getWinner(playerMove,computerMove) {
         winner = 'computer';
     } else if(playerMove === 'rock' && computerMove === 'scissors'){
         winner = 'player';
+    } else {
+        console.log('wrong choice. try again')
     }
           return winner;
           
