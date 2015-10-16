@@ -90,9 +90,10 @@ function getWinner(playerMove,computerMove) {
             console.log('Player Won.' + playerWins + 'x' + computerWins);
         
         } else if(fivePlayer == 'computer'){
+            computerWins++;
             console.log("YOU: " + playerChoice + " x " + "COMPUTER: "+ computerChoice);
             console.log('Computer Won.' + playerWins + 'x' + computerWins);
-            computerWins++;
+            
         
         } else if(fivePlayer == 'tie'){
             console.log('Tie.' + playerWins + 'x' + computerWins);
