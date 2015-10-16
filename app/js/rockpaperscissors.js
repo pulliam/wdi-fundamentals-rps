@@ -2,7 +2,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -52,11 +52,25 @@ function getWinner(playerMove,computerMove) {
     } else if(playerMove === 'rock' && computerMove === 'scissors'){
         winner = 'player';
     } else {
-        console.log('wrong choice. try again')
+        console.log('wrong choice. try again');
     }
           return winner;
           
 }
+
+   function final (x, y){
+        
+        var totalwinner;
+        if(x > y){
+            totalwinner = 'Player won! Cheers!';
+        }
+        else {
+            totalwinner = 'Try next time! Computer won.';
+        }
+
+        return totalwinner;
+    }
+
 
 
     
@@ -73,17 +87,22 @@ function getWinner(playerMove,computerMove) {
         if(fivePlayer == 'player'){
             playerWins++;
             console.log("YOU: " + playerChoice + " x " + "COMPUTER: "+ computerChoice);
-            console.log('Player Won. Next One');
+            console.log('Player Won.' + playerWins + 'x' + computerWins);
         
         } else if(fivePlayer == 'computer'){
-               console.log("YOU: " + playerChoice + " x " + "COMPUTER: "+ computerChoice);
-        console.log('Computer Won. Next One');
-        computerWins++;
+            console.log("YOU: " + playerChoice + " x " + "COMPUTER: "+ computerChoice);
+            console.log('Computer Won.' + playerWins + 'x' + computerWins);
+            computerWins++;
         
         } else if(fivePlayer == 'tie'){
-            console.log('Tie. Next One');
+            console.log('Tie.' + playerWins + 'x' + computerWins);
         }
 }
-    return [playerWins, computerWins];
+    return  playerWins + ' x ' + computerWins + ' ' +
+    final(playerWins, computerWins);
 }
 playToFive();
+
+
+
+ 
